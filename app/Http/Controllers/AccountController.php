@@ -60,10 +60,11 @@ class AccountController extends Controller
             'role' => 'required|in:admin,author'
         ]);
 
-        $account = Account::where('username', $username)->first();
-        if ($account->username !== $request->username) {
+        $account = Account::where('username', $username)->firstOrFail();
+
+        if ($username !== $request->username) {
             $request->validate([
-                'username' => 'unique:account'
+                'username' => 'unique:account,username'
             ]);
         }
 

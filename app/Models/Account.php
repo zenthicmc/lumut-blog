@@ -8,11 +8,8 @@ class Account extends Model
 {
     protected $table = 'account';
     public $timestamps = false;
-    
-    protected $fillable = [
-        'username',
-        'password',
-        'name',
-        'role',
-    ];
+    protected $primaryKey = 'username';
+    public $incrementing = false;
+    protected $keyType = 'string';
+    protected $fillable = ['username', 'password', 'name', 'role'];
 }
