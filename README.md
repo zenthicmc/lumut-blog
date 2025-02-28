@@ -70,13 +70,7 @@ Make sure you have the following installed on your system:
    php artisan migrate --seed
    ```
 
-6. **Set Storage & Cache Permissions**
-   ```sh
-   php artisan storage:link
-   chmod -R 777 storage bootstrap/cache
-   ```
-
-7. **Start Laravel Development Server**
+6. **Start Laravel Development Server**
    ```sh
    php artisan serve
    ```
@@ -88,26 +82,3 @@ Make sure you have the following installed on your system:
 |---------|---------|----------|
 | Admin   | admin   | admin    |
 | Author  | author  | author   |
-
-## Additional Commands
-
-- **To Compile Frontend Assets** (if using Vite/Bootstrap):
-  ```sh
-  npm run dev
-  ```
-
-- **To Run Tests**
-  ```sh
-  php artisan test
-  ```
-
-## Troubleshooting
-
-- If you encounter permission issues, run:
-  ```sh
-  sudo chmod -R 777 storage bootstrap/cache
-  ```
-- If `.env` changes don't take effect:
-  ```sh
-  php artisan config:clear
-  ```
