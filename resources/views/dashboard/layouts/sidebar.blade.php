@@ -76,13 +76,15 @@
       </a>
     </li>
 
-    <!-- Accounts -->
-    <li class="menu-item {{ request()->is('dashboard/account*') ? 'active' : '' }}">
-      <a href="{{ route('account.index') }}" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-user"></i>
-        <div data-i18n="Analytics">Accounts</div>
-      </a>
-    </li>
+    @if(session('account')['role'] == 'admin')
+      <!-- Accounts -->
+      <li class="menu-item {{ request()->is('dashboard/account*') ? 'active' : '' }}">
+        <a href="{{ route('account.index') }}" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-user"></i>
+          <div data-i18n="Analytics">Accounts</div>
+        </a>
+      </li>
+    @endif
 
     <!-- Post -->
     <li class="menu-item {{ request()->is('dashboard/post*') ? 'active' : '' }}">

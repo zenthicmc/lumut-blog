@@ -5,6 +5,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AuthController;
 use App\Http\Middleware\AuthMiddleware;
+use App\Http\Middleware\IsAdminMiddleware;
 use App\Http\Controllers\HomeController;
 use App\Models\Post;
 use App\Models\Account;
@@ -28,6 +29,6 @@ Route::prefix('dashboard')->middleware(AuthMiddleware::class)->group(function ()
         ]);
     })->name('dashboard.index');
 
-    Route::resource('account', AccountController::class);
+    Route::resource('account', AccountController::class)->middleware(IsAdminMiddleware::class);
     Route::resource('post', PostController::class);
 });
