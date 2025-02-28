@@ -14,8 +14,8 @@ Make sure you have the following installed on your system:
 
 1. **Clone the Repository**
    ```sh
-   git clone https://github.com/your-repo/laravel-blog.git
-   cd laravel-blog
+   git clone https://github.com/zenthicmc/lumut-blog.git
+   cd lumut-blog
    ```
 
 2. **Install Dependencies**
